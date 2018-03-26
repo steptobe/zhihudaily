@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 主题分类 -->
+  <scroll-view scroll-x style="height: 70rpx;" scroll-left="{{left}}" class="scroll-header" scroll-with-animation="true">
+    <view wx:for="{{tabTitle.others}}" class="tabli">
+      <text  bindtap="bindClick" data-id="{{item.id}}" data-index="{{index}}" class="{{activeIndex == item.id ? 'active' : ''}}">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <!-- 主题分类 end -->
+
+  <!-- 分类列表 -->
+  <view  class='bg'></view>
+  <view  class='view-main'>
+    <view wx:for="{{tabDetail.stories}}" class='viwe-box'>
+        <image src='{{item.images[0]}}' class='img'></image>
+        <view class='text'>
+            <text>
+              {{item.title}}
+            </text>
+        </view>
+    </view>    
+  </view>
+  <!-- 分类列表end -->
+</view>
